@@ -25,7 +25,7 @@ SECRET_KEY = 'xl14(+(@j#v9@6k4g6x9xw2n1ih=$b1^+_*ls1js)shqdyv$ts'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '<dagusen>.pythonanywhere.com']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Movie',
+    
 ]
 
 MIDDLEWARE = [
@@ -105,7 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Manila'
+#TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -118,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

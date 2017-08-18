@@ -29,7 +29,7 @@ class Actor(models.Model):
 	Actor_name = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.actor_name
+		return self.Actor_name
 
 class Genre(models.Model):
 	Type = models.CharField(max_length=200)

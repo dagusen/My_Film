@@ -6,12 +6,12 @@
             <p>published: {{ film.Published_date }}</p>
             <h1><a href="{% url 'film_detail' pk=film.pk %}">{{ film.Title }}</a></h1>
             <p>{{ film.Description|linebreaksbr }}</p>
-            <!-- {% for actor in film.actor.all %} 
+            {% for actor in film.actor.all %} 
                 <p>Actor : {{ actor.Actor_name }} </p>
             {% endfor%}
             {% for genre in film.genre.all %}
                 <p>Genre : {{ genre.Type }}</p> 
-            {% endfor %}-->
+            {% endfor %}
         </div>
     {% endfor %}
 {% endblock content %}

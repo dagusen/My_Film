@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .models import Film, Actor, Genre
 from django.views.generic import View, DetailView
+from .forms import FilmForm
 
 # Create your views here.
  
@@ -48,3 +49,7 @@ class film_detail(DetailView):
 #			'film': film,
 #		}
 #		return render(request, "Film.html", context)
+
+def film_new(request):
+    film = FilmForm()
+    return render(request, 'film_edit.html', {'film': film})

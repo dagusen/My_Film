@@ -23,5 +23,6 @@ urlpatterns = [
     #url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
 
     url(r'^film/(?P<pk>[-\w]+)/$', film_detail.as_view(), name='film_detail'),
+    url(r'^film/new/$', views.film_new, name='film_new'),
 ]
     

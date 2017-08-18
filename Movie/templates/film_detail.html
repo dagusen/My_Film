@@ -9,5 +9,11 @@
         {% endif %}
         <h1>{{ film.Title }}</h1>
         <p>{{ film.Description|linebreaksbr }}</p>
+        {% for actor in film.actor.all %} 
+             <p>Actor : {{ actor.Actor_name }} </p>
+        {% endfor%}
+        {% for genre in film.genre.all %}
+            <p>Genre : {{ genre.Type }}</p> 
+        {% endfor %}
     </div>
 {% endblock %}

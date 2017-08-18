@@ -1,27 +1,17 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for film in film %}
+        <div class="film">
+            <p>published: {{ film.Published_date }}</p>
+            <h1><a href="">{{ film.Title }}</a></h1>
+            <p>{{ film.Description|linebreaksbr }}</p>
+            <!-- {% for actor in film.actor.all %} 
+                <p>Actor : {{ actor.Actor_name }} </p>
+            {% endfor%}
+            {% for genre in film.genre.all %}
+                <p>Genre : {{ genre.Type }}</p> 
+            {% endfor %}-->
         </div>
-
-        {% for film in film %}
-            <div>
-                <p>published: {{ film.Published_date }}</p>
-                <h1><a href="">{{ film.Title }}</a></h1>
-                <p>{{ film.Description|linebreaksbr }}</p>
-                <!-- {% for actor in film.actor.all %} 
-                    <p>Actor : {{ actor.Actor_name }} </p>
-                {% endfor%}
-                
-                {% for genre in film.genre.all %}
-                     <p>Genre : {{ genre.Type }}</p> 
-                {% endfor %}-->
-            </div>
-        {% endfor %}
-
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from . import views
-from .views import film_list
+from .views import film_list, film_detail
 
 urlpatterns = [
     url(r'^$', film_list.as_view(), name='film-list'),
-    #url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-    #url(r'^post/new/$', views.post_new, name='post_new'),
+    #url(r'^film/(?P<pk>[-\w]+)/$', film_detail.as_view(), name='film_detail'),
     #url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
+
+    url(r'^film/(?P<pk>[-\w]+)/$', film_detail.as_view(), name='film_detail'),
 ]
     
